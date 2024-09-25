@@ -8,7 +8,19 @@ jobs:
       - name: first-step
         run: echo "Hello World"
   second-job:
+    needs: first-job
     runs-on: ubuntu-latest
     steps:
       - name: first-step
         run: echo "Hello World 2"
+  third-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first-step
+        run: echo "Hello World 3"
+  fourth-job:
+    needs: third-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: first-step
+        run: echo "Hello World 4"
