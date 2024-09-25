@@ -18,4 +18,4 @@ jobs:
       - name: List modified files
         run: |
           echo "Modified files:"
-          git diff --name-only HEAD^ HEAD
+          git diff HEAD^ HEAD
