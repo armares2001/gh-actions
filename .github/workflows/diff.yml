@@ -16,4 +16,4 @@ jobs:
       - name: List modified files
         run: |
           echo "Modified files:"
-          git diff --name-only ${{ github.event.before }} ${{ github.event.after }}
+          git diff --name-only HEAD^ HEAD
