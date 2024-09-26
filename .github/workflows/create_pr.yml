@@ -1,11 +1,11 @@
 name: Create Pull Request on Tag from Feature Branches
 
-on:
-  push:
-    tags:
-      - "v*" # Si attiva per i tag che iniziano con 'v'
-    branches:
-      - feature/* # Si attiva solo quando il tag viene creato su un branch 'feature/*'
+on: workflow_dispatch
+#   push:
+#     tags:
+#       - "v*"
+#     branches:
+#       - feature/*
 
 jobs:
   create_pull_request:
