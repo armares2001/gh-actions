@@ -1,0 +1,31 @@
+name: Create Pull Request on Push to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-temp-branch-and-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create temporary branch
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git checkout -b temp-branch-${{ github.sha }}
+          git push origin temp-branch-${{ github.sha }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: temp-branch-${{ github.sha }}
+          title: "Automated PR for code review"
+          body: "This PR has been auto-generated for code review."
+          draft: false
