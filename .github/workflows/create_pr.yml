@@ -1,11 +1,11 @@
 name: Create Pull Request on Tag from Feature Branches
 
-on: workflow_dispatch
-#   push:
-#     tags:
-#       - "v*"
-#     branches:
-#       - feature/*
+on: # workflow_dispatch
+  push:
+    tags:
+      - "v*"
+    branches:
+      - feature/*
 
 jobs:
   create_pull_request:
