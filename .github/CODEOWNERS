@@ -1,0 +1,9 @@
+
+# Responsabile di tutto il repository
+* @armares2001
+
+# Responsabile di tutti i file nella directory /docs
+/docs/ @armares2001
+
+# Responsabile di tutti i file .js
+*.js @armares2001
